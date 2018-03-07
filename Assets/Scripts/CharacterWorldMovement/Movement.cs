@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Physix2Move.x = Input.GetAxis("Horizontal") * speed;
+        Physix2Move.x = Input.GetAxisRaw("Horizontal") * speed;
         Physix2Move.y = physix.velocity.y;
         physix.velocity = Physix2Move;
     }
