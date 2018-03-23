@@ -1,0 +1,358 @@
+fileFormatVersion: 2
+guid: e91e7315b34a4f94f9c620d00368ef04
+timeCreated: 1521633027
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group1
+    100004: group2
+    100006: group3
+    100008: ikHandle1
+    100010: ikHandle2
+    100012: ikHandle3
+    100014: ikHandle4
+    100016: ikHandle5
+    100018: ikHandle6
+    100020: ikHandle7
+    100022: ikHandle8
+    100024: joint10
+    100026: joint10 1
+    100028: joint11
+    100030: joint12
+    100032: joint13
+    100034: joint14
+    100036: joint15
+    100038: joint16
+    100040: joint17
+    100042: joint18
+    100044: joint5
+    100046: joint5 1
+    100048: L_Backleg
+    100050: L_Backleg 1
+    100052: L_Backleg 2
+    100054: L_Backleg 3
+    100056: L_Ear
+    100058: L_Ear 1
+    100060: L_Frontleg
+    100062: L_Frontleg 1
+    100064: L_Frontleg 2
+    100066: L_Frontleg 3
+    100068: nurbsCircle1
+    100070: nurbsCircle10
+    100072: nurbsCircle11
+    100074: nurbsCircle12
+    100076: nurbsCircle13
+    100078: nurbsCircle2
+    100080: nurbsCircle2 1
+    100082: nurbsCircle3
+    100084: nurbsCircle3 1
+    100086: nurbsCircle4
+    100088: nurbsCircle4 1
+    100090: nurbsCircle5
+    100092: nurbsCircle5 1
+    100094: nurbsCircle6
+    100096: nurbsCircle7
+    100098: nurbsCircle8
+    100100: nurbsCircle9
+    100102: pCube1
+    100104: R_Backleg
+    100106: R_Backleg 1
+    100108: R_Backleg 2
+    100110: R_Backleg 3
+    100112: R_Ear
+    100114: R_Ear 1
+    100116: R_Frontleg
+    100118: R_Frontleg 1
+    100120: R_Frontleg 2
+    100122: R_Frontleg 3
+    400000: //RootNode
+    400002: group1
+    400004: group2
+    400006: group3
+    400008: ikHandle1
+    400010: ikHandle2
+    400012: ikHandle3
+    400014: ikHandle4
+    400016: ikHandle5
+    400018: ikHandle6
+    400020: ikHandle7
+    400022: ikHandle8
+    400024: joint10
+    400026: joint10 1
+    400028: joint11
+    400030: joint12
+    400032: joint13
+    400034: joint14
+    400036: joint15
+    400038: joint16
+    400040: joint17
+    400042: joint18
+    400044: joint5
+    400046: joint5 1
+    400048: L_Backleg
+    400050: L_Backleg 1
+    400052: L_Backleg 2
+    400054: L_Backleg 3
+    400056: L_Ear
+    400058: L_Ear 1
+    400060: L_Frontleg
+    400062: L_Frontleg 1
+    400064: L_Frontleg 2
+    400066: L_Frontleg 3
+    400068: nurbsCircle1
+    400070: nurbsCircle10
+    400072: nurbsCircle11
+    400074: nurbsCircle12
+    400076: nurbsCircle13
+    400078: nurbsCircle2
+    400080: nurbsCircle2 1
+    400082: nurbsCircle3
+    400084: nurbsCircle3 1
+    400086: nurbsCircle4
+    400088: nurbsCircle4 1
+    400090: nurbsCircle5
+    400092: nurbsCircle5 1
+    400094: nurbsCircle6
+    400096: nurbsCircle7
+    400098: nurbsCircle8
+    400100: nurbsCircle9
+    400102: pCube1
+    400104: R_Backleg
+    400106: R_Backleg 1
+    400108: R_Backleg 2
+    400110: R_Backleg 3
+    400112: R_Ear
+    400114: R_Ear 1
+    400116: R_Frontleg
+    400118: R_Frontleg 1
+    400120: R_Frontleg 2
+    400122: R_Frontleg 3
+    2100000: lambert3
+    4300000: pCube1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 77
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint11
+        weight: 1
+      - path: joint11/joint12
+        weight: 1
+      - path: joint11/joint12/joint13
+        weight: 1
+      - path: joint11/joint12/joint13/joint14
+        weight: 1
+      - path: joint11/joint12/joint13/joint14/joint15
+        weight: 1
+      - path: joint11/joint12/joint13/joint14/L_Ear
+        weight: 1
+      - path: joint11/joint12/joint13/joint14/L_Ear/L_Ear 1
+        weight: 1
+      - path: joint11/joint12/joint13/joint14/R_Ear
+        weight: 1
+      - path: joint11/joint12/joint13/joint14/R_Ear/R_Ear 1
+        weight: 1
+      - path: joint11/joint12/L_Frontleg
+        weight: 1
+      - path: joint11/joint12/L_Frontleg/L_Frontleg 1
+        weight: 1
+      - path: joint11/joint12/L_Frontleg/L_Frontleg 1/L_Frontleg 2
+        weight: 1
+      - path: joint11/joint12/L_Frontleg/L_Frontleg 1/L_Frontleg 2/L_Frontleg 3
+        weight: 1
+      - path: joint11/joint12/L_Frontleg/L_Frontleg 1/L_Frontleg 2/L_Frontleg 3/joint5
+        weight: 1
+      - path: joint11/joint12/R_Frontleg
+        weight: 1
+      - path: joint11/joint12/R_Frontleg/R_Frontleg 1
+        weight: 1
+      - path: joint11/joint12/R_Frontleg/R_Frontleg 1/R_Frontleg 2
+        weight: 1
+      - path: joint11/joint12/R_Frontleg/R_Frontleg 1/R_Frontleg 2/R_Frontleg 3
+        weight: 1
+      - path: joint11/joint12/R_Frontleg/R_Frontleg 1/R_Frontleg 2/R_Frontleg 3/joint5
+          1
+        weight: 1
+      - path: joint11/joint16
+        weight: 1
+      - path: joint11/joint16/joint17
+        weight: 1
+      - path: joint11/joint16/joint17/joint18
+        weight: 1
+      - path: joint11/joint16/L_Backleg
+        weight: 1
+      - path: joint11/joint16/L_Backleg/L_Backleg 1
+        weight: 1
+      - path: joint11/joint16/L_Backleg/L_Backleg 1/L_Backleg 2
+        weight: 1
+      - path: joint11/joint16/L_Backleg/L_Backleg 1/L_Backleg 2/L_Backleg 3
+        weight: 1
+      - path: joint11/joint16/L_Backleg/L_Backleg 1/L_Backleg 2/L_Backleg 3/joint10
+        weight: 1
+      - path: joint11/joint16/R_Backleg
+        weight: 1
+      - path: joint11/joint16/R_Backleg/R_Backleg 1
+        weight: 1
+      - path: joint11/joint16/R_Backleg/R_Backleg 1/R_Backleg 2
+        weight: 1
+      - path: joint11/joint16/R_Backleg/R_Backleg 1/R_Backleg 2/R_Backleg 3
+        weight: 1
+      - path: joint11/joint16/R_Backleg/R_Backleg 1/R_Backleg 2/R_Backleg 3/joint10
+          1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/group1
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle2/ikHandle1
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle2/ikHandle5
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle3/ikHandle2
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle3/ikHandle8
+        weight: 1
+      - path: nurbsCircle1/group1/nurbsCircle3/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle1/group2
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle2 1
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle2 1/ikHandle4
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle2 1/ikHandle6
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle2 1/nurbsCircle4 1
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle3 1
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle3 1/ikHandle3
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle3 1/ikHandle7
+        weight: 1
+      - path: nurbsCircle1/group2/nurbsCircle3 1/nurbsCircle5 1
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle8/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle8/nurbsCircle9/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle8/nurbsCircle9/nurbsCircle10/group3
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle8/nurbsCircle9/nurbsCircle10/group3/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle6/nurbsCircle8/nurbsCircle9/nurbsCircle10/group3/nurbsCircle13
+        weight: 1
+      - path: pCube1
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
