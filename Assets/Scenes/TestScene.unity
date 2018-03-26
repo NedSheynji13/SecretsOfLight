@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcb0c46f5b157c44592ab86d49581ad7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcb0c46f5b157c44592ab86d49581ad7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -648,7 +648,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090815069}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 25.12, y: 0.85, z: 4.9045}
+  m_LocalPosition: {x: 25.12, y: 0.85, z: 0}
   m_LocalScale: {x: 5.551111, y: 0.0010926713, z: 1.070818}
   m_Children: []
   m_Father: {fileID: 549374726}
@@ -785,7 +785,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1109875741}
   m_LocalRotation: {x: -0, y: 0.0180054, z: -0, w: 0.99983793}
-  m_LocalPosition: {x: -0.600001, y: 8.453564, z: -9.264957}
+  m_LocalPosition: {x: 7.74, y: 8.453564, z: -9.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -804,7 +804,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 968855340}
   lerpSpeed: 3
-  targetOffset: {x: 1, y: 1, z: -10}
+  clampMin: 7.79
+  clampMax: 26.62
+  targetOffset: {x: 5, y: 2, z: -10}
 --- !u!1 &1805437959
 GameObject:
   m_ObjectHideFlags: 0
