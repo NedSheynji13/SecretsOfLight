@@ -7,7 +7,7 @@ public class AnimationControler : MonoBehaviour
     public Animator anim;
 
     private bool jump, rand1, rand2;
-    private float Hspeed, speed, pRand1, pRand2;
+    private float Hspeed, speed;
     private float maxSpeed = 1;
     private Vector3 facedirection = new Vector3(0, 90, 0);
     private float yPosition = 6f;
@@ -46,16 +46,22 @@ public class AnimationControler : MonoBehaviour
             if (Hspeed <= maxSpeed)
                 Hspeed += Time.deltaTime;
         }
-        //if (!rand1)
-        //{
-        //    rand1 = true;
-        //    Invoke("PlayRandom1", pRand1);
-        //}
-        //if (!rand2)
-        //{
-        //    rand2 = true;
-        //    Invoke("PlayRandom1", pRand1);
-        //}
+        if (!rand1)
+        {
+            if (Random.value > 0.5f && !rand2)
+            {
+                rand1 = true;
+                PlayRandom1();
+            }
+        }
+        if (!rand2)
+        {
+            if (Random.value > 0.5f && !rand1)
+            {
+                rand2 = true;
+                PlayRandom1();
+            }
+        }
 
         if (speed > 0)
             speed -= Time.deltaTime * 0.4f;
