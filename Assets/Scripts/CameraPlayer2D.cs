@@ -12,7 +12,7 @@ public class CameraPlayer2D : MonoBehaviour
     {   
         if(target != null)
         {
-            currPos = target.position + new Vector3(targetOffset.x, targetOffset.y, transform.position.z);
+			currPos = target.position + new Vector3(0 , 0 , -10);
             currPos.y = Mathf.Max(currPos.y, 8);
 
             transform.position = Vector3.Lerp(transform.position, currPos, lerpSpeed * Time.deltaTime);
