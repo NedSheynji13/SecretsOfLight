@@ -93,8 +93,8 @@ public class AIController : MonoBehaviour
 
 	private void Fight()
 	{
-        SceneManager.LoadScene("RunGoodSirRun");
-    	}
+		throw new System.NotImplementedException();
+	}
 
 
 }
