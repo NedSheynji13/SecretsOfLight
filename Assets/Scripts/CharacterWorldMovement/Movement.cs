@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody2D physix;
-    private Vector2 Physix2Move;
-    [HideInInspector]
-    public float speed = 10;
+    private Coroutine JumpisActive;
 
-    // Use this for initialization
-    void Start()
+    private void FixedUpdate()
     {
-        physix = GetComponent<Rigidbody2D>();
+        if (Mathf.Abs(AnimationControler.speed) > 0.05f)
+            transform.Translate(new Vector3(AnimationControler.speed / 10, 0, 0));
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            JumpisActive = StartCoroutine(Jump());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Jump()
     {
-        Physix2Move.x = Input.GetAxisRaw("Horizontal") * speed;
-        Physix2Move.y = physix.velocity.y;
-        physix.velocity = Physix2Move;
+        transform.GetComponent<Rigidbody>().useGravity = false;
+        yield return new WaitForSeconds(1.5f);
+        transform.GetComponent<Rigidbody>().useGravity = true;
     }
 }
