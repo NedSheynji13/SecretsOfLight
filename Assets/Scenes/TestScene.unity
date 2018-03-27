@@ -14874,7 +14874,7 @@ MonoBehaviour:
   lerpSpeed: 3
   clampMin: 0
   clampMax: 0
-  targetOffset: {x: 0, y: 0, z: 0}
+  targetOffset: {x: 0, y: 0, z: -10}
 --- !u!114 &1109875747
 MonoBehaviour:
   m_ObjectHideFlags: 0
