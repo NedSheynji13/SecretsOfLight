@@ -7,14 +7,18 @@ public class CameraPlayer2D : MonoBehaviour
     public float clampMin;
     public float clampMax;
 
+    private float camHeight;
     public Vector3 targetOffset;
     private Vector3 currPos;
 
-
+    private void Start()
+    {
+        camHeight = target.position.y + targetOffset.y;
+    }
     private void FixedUpdate()
     {
         float x = Mathf.Clamp(transform.position.x, clampMin, clampMax);
-        transform.position = new Vector3(x, currPos.y, targetOffset.z);
+        transform.position = new Vector3(x, camHeight, targetOffset.z);
         if (target != null)
         {
             //<<<<<<< HEAD
