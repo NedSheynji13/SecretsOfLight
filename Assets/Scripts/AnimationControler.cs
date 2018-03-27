@@ -17,23 +17,31 @@ public class AnimationControler : MonoBehaviour
     {
         if (!jump && Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetBool("Random1", false);
+            anim.SetBool("Random2", false);
             anim.SetBool("Jump", true);
             Invoke("ResetJump", 1.5f);
         }
         if (Input.GetKey(KeyCode.D))
         {
+            anim.SetBool("Random1", false);
+            anim.SetBool("Random2", false);
             facedirection = new Vector3(0, 90, 0);
             if (speed <= maxSpeed)
                 speed += Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
+            anim.SetBool("Random1", false);
+            anim.SetBool("Random2", false);
             facedirection = new Vector3(0, -90, 0);
             if (speed <= maxSpeed)
                 speed += Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.W))
         {
+            anim.SetBool("Random1", false);
+            anim.SetBool("Random2", false);
             yPosition += 0.1f;
             scaling -= 0.5f;
             if (Hspeed <= maxSpeed)
@@ -41,6 +49,8 @@ public class AnimationControler : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S))
         {
+            anim.SetBool("Random1", false);
+            anim.SetBool("Random2", false);
             yPosition -= 0.1f;
             scaling += 0.5f;
             if (Hspeed <= maxSpeed)
@@ -87,7 +97,6 @@ public class AnimationControler : MonoBehaviour
     {
         if (Mathf.Abs(speed) > 0.05f)
             transform.Translate(new Vector3(0, 0, speed / 10));
-        Debug.Log(Hspeed);
 
         transform.eulerAngles = facedirection;
         transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, yPosition, transform.position.z), Time.deltaTime);
