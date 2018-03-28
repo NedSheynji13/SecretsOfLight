@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         if (Mathf.Abs(AnimationControler.speed) > 0.05f)
-            transform.Translate(new Vector3(AnimationControler.speed / 10, 0, 0));
+            transform.Translate(Input.GetAxis("Horizontal") / 10, 0, 0);
 
         if (Input.GetKeyDown(KeyCode.Space))
             JumpisActive = StartCoroutine(Jump());

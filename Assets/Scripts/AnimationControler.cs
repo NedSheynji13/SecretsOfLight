@@ -22,27 +22,23 @@ public class AnimationControler : MonoBehaviour
             Invoke("ResetJump", 1.5f);
         }
 
-        speed = Input.GetAxis("Horizontal");
+        speed = Mathf.Abs(Input.GetAxis("Horizontal")) + Mathf.Abs(Input.GetAxis("Vertical"));
         Mathf.Clamp(speed, -maxSpeed, maxSpeed);
 
-        if (speed < -0.1f)
+        if (Input.GetAxis("Horizontal") < 0)
             facedirection = new Vector3(0, -90, 0);
-        else if (speed > 0.1f)
+        else
             facedirection = new Vector3(0, 90, 0);
 
         if (Input.GetKey(KeyCode.W))
         {
-            yPosition += 0.1f;
-            scaling -= 0.5f;
-            if (Hspeed <= maxSpeed)
-                Hspeed += Time.deltaTime;
+            yPosition += 0.01f;
+            scaling -= 0.05f;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            yPosition -= 0.1f;
-            scaling += 0.5f;
-            if (Hspeed <= maxSpeed)
-                Hspeed += Time.deltaTime;
+            yPosition -= 0.01f;
+            scaling += 0.05f;
         }
 
         if (!stop && speed > 0 && !Input.anyKey)
@@ -50,12 +46,15 @@ public class AnimationControler : MonoBehaviour
             stop = true;
             anim.SetBool("StopBool", true);
             speed /= 4;
-            Hspeed /= 4;
             if (speed < 0.2)
                 speed = 0;
             Invoke("ResetStop", 0.2f);
         }
 
+        if (!Input.anyKey)
+        {
+
+        }
 
         if (yPosition > 6.5f)
             yPosition = 6.5f;
@@ -66,15 +65,16 @@ public class AnimationControler : MonoBehaviour
             scaling = 25;
         else if (scaling < 15)
             scaling = 15;
-
-        anim.SetFloat("WalkSpeed", Mathf.Abs(speed) * 4);
+        
+        anim.SetFloat("WalkSpeed", speed);
     }
 
     void FixedUpdate()
     {
         transform.eulerAngles = facedirection;
-        transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, yPosition, transform.position.z), Time.deltaTime);
-        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * scaling, Time.deltaTime);
+        Debug.Log(Hspeed);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, yPosition, transform.position.z), Time.deltaTime * 10);
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * scaling, Time.deltaTime * 10);
     }
 
     void ResetStop()
