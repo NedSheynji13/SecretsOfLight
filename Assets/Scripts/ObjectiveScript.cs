@@ -14,7 +14,7 @@ public class ObjectiveScript : MonoBehaviour ,IInteractable{
     }
     private void Update()
     {
-        
+
 
     }
 
