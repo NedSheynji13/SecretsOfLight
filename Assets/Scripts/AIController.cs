@@ -8,14 +8,18 @@ public class AIController : MonoBehaviour
 
     public float attackRange = 7;
     float moveDirX;
-	float moveDirZ;
+	float moveDirY;
 
 
 	private Vector3 karate;
+    private Vector3 abstand;
+
     public GameObject Player;
+    public GameObject Deer;
 
 
-	public bool playerIsSafe = false;
+
+    public bool playerIsSafe = false;
 
 	public bool playerIsNear = false;
 	public bool reachedPlayer = false;
@@ -61,9 +65,9 @@ public class AIController : MonoBehaviour
     private void Patrol()
 	{
         
-		moveDirX = transform.position.x +Random.Range(-1,1) ;
-        moveDirZ = transform.position.z + Random.Range(-1,1) ;
-		karate = new Vector3(moveDirX, 0.5f, moveDirZ);
+		moveDirX = transform.position.x +Random.Range(-0.1f,0.1f) ;
+        moveDirY = transform.position.y + Random.Range(-0.1f, 0.1f);
+		karate = new Vector3(moveDirX, moveDirY, transform.position.z);
         transform.position = Vector3.Slerp(transform.position, karate, 0.05f);
 		if (playerIsNear)
 		{
@@ -75,8 +79,9 @@ public class AIController : MonoBehaviour
 
 	private void Chase()
 	{
-        transform.position = Vector3.Lerp(transform.position, Player.transform.position - Vector3.one, 0.01f);
-
+        transform.rotation = Deer.transform.rotation;
+        transform.position = Vector3.Lerp(transform.position, Player.transform.position, 0.01f);
+    
 
 		if (!playerIsNear)
 		{
@@ -86,10 +91,10 @@ public class AIController : MonoBehaviour
 		{
 
 			Debug.Log("karate");
-            brain = new FSM(Fight);
-		}
-		//throw new System.NotImplementedException();
-	}
+            brain = new FSM(Patrol);
+        }
+        //throw new System.NotImplementedException();
+    }
 
 	private void Fight()
 	{

@@ -16,6 +16,7 @@ public class FallDown : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            AnimationControler.pull = true;
             E.SetBool("Entered", false);
             Pillar.SetBool("Pulled", true);
             Collider = transform.GetComponent<BoxCollider>();

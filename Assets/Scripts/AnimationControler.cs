@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationControler : MonoBehaviour
 {
     public Animator anim;
-
+    public static bool pull = false;
     private bool jump, rand1, rand2, stop, turn;
     public static float Hspeed, speed;
     private float maxSpeed = 1;
@@ -20,6 +20,12 @@ public class AnimationControler : MonoBehaviour
             jump = true;
             anim.SetBool("Jump", true);
             Invoke("ResetJump", 1.5f);
+        }
+        if (pull)
+        {
+            anim.SetBool("Pull", true);
+            pull = false;
+            Invoke("ResetPull", 1f);
         }
 
         speed = Mathf.Abs(Input.GetAxis("Horizontal")) + Mathf.Abs(Input.GetAxis("Vertical"));
@@ -51,11 +57,6 @@ public class AnimationControler : MonoBehaviour
             Invoke("ResetStop", 0.2f);
         }
 
-        if (!Input.anyKey)
-        {
-
-        }
-
         if (yPosition > 6.5f)
             yPosition = 6.5f;
         else if (yPosition < 4f)
@@ -65,7 +66,7 @@ public class AnimationControler : MonoBehaviour
             scaling = 25;
         else if (scaling < 15)
             scaling = 15;
-        
+
         anim.SetFloat("WalkSpeed", speed);
     }
 
@@ -75,6 +76,11 @@ public class AnimationControler : MonoBehaviour
         Debug.Log(Hspeed);
         transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, yPosition, transform.position.z), Time.deltaTime * 10);
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * scaling, Time.deltaTime * 10);
+    }
+
+    void ResetPull()
+    {
+        anim.SetBool("Pull", false);
     }
 
     void ResetStop()
