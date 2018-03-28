@@ -6,8 +6,8 @@ public class AnimationControler : MonoBehaviour
 {
     public Animator anim;
 
-    private bool jump, rand1, rand2;
-    private float Hspeed, speed;
+    private bool jump, rand1, rand2, stop, turn;
+    public static float Hspeed, speed;
     private float maxSpeed = 1;
     private Vector3 facedirection = new Vector3(0, 90, 0);
     private float yPosition = 6f;
@@ -17,21 +17,19 @@ public class AnimationControler : MonoBehaviour
     {
         if (!jump && Input.GetKeyDown(KeyCode.Space))
         {
+            jump = true;
             anim.SetBool("Jump", true);
             Invoke("ResetJump", 1.5f);
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            facedirection = new Vector3(0, 90, 0);
-            if (speed <= maxSpeed)
-                speed += Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
+
+        speed = Input.GetAxis("Horizontal");
+        Mathf.Clamp(speed, -maxSpeed, maxSpeed);
+
+        if (speed < -0.1f)
             facedirection = new Vector3(0, -90, 0);
-            if (speed <= maxSpeed)
-                speed += Time.deltaTime;
-        }
+        else if (speed > 0.1f)
+            facedirection = new Vector3(0, 90, 0);
+
         if (Input.GetKey(KeyCode.W))
         {
             yPosition += 0.1f;
@@ -46,28 +44,18 @@ public class AnimationControler : MonoBehaviour
             if (Hspeed <= maxSpeed)
                 Hspeed += Time.deltaTime;
         }
-        if (!rand1)
+
+        if (!stop && speed > 0 && !Input.anyKey)
         {
-            if (Random.value > 0.5f && !rand2)
-            {
-                rand1 = true;
-                PlayRandom1();
-            }
-        }
-        if (!rand2)
-        {
-            if (Random.value > 0.5f && !rand1)
-            {
-                rand2 = true;
-                PlayRandom1();
-            }
+            stop = true;
+            anim.SetBool("StopBool", true);
+            speed /= 4;
+            Hspeed /= 4;
+            if (speed < 0.2)
+                speed = 0;
+            Invoke("ResetStop", 0.2f);
         }
 
-        if (speed > 0)
-            speed -= Time.deltaTime * 0.4f;
-
-        if (Hspeed > 0)
-            Hspeed -= Time.deltaTime * 0.4f;
 
         if (yPosition > 6.5f)
             yPosition = 6.5f;
@@ -79,19 +67,20 @@ public class AnimationControler : MonoBehaviour
         else if (scaling < 15)
             scaling = 15;
 
-        anim.SetFloat("WalkSpeed", Hspeed * 4);
-        anim.SetFloat("WalkSpeed", speed * 4);
+        anim.SetFloat("WalkSpeed", Mathf.Abs(speed) * 4);
     }
 
     void FixedUpdate()
     {
-        if (Mathf.Abs(speed) > 0.05f)
-            transform.Translate(new Vector3(0, 0, speed / 10));
-        Debug.Log(Hspeed);
-
         transform.eulerAngles = facedirection;
         transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, yPosition, transform.position.z), Time.deltaTime);
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * scaling, Time.deltaTime);
+    }
+
+    void ResetStop()
+    {
+        anim.SetBool("StopBool", false);
+        stop = false;
     }
 
     void ResetJump()
@@ -103,24 +92,20 @@ public class AnimationControler : MonoBehaviour
     void PlayRandom1()
     {
         anim.SetBool("Random1", true);
-        Invoke("ResetRandom1", 3.3f);
+        Invoke("ResetRandom", 2.1f);
     }
 
     void PlayRandom2()
     {
         anim.SetBool("Random2", true);
-        Invoke("ResetRandom2", 4.3f);
+        Invoke("ResetRandom", 4.3f);
     }
 
-    void ResetRandom1()
+    void ResetRandom()
     {
         anim.SetBool("Random1", false);
-        rand1 = false;
-    }
-
-    void ResetRandom2()
-    {
         anim.SetBool("Random2", false);
+        rand1 = false;
         rand2 = false;
     }
 }
