@@ -8,6 +8,7 @@ public class FallDown : MonoBehaviour {
     public Animator Pillar;
     public Animator E;
     private BoxCollider Collider;
+    public static bool felt = false;
     #endregion
 
     private void OnTriggerStay(Collider other)
@@ -23,6 +24,7 @@ public class FallDown : MonoBehaviour {
             Collider.isTrigger = false;
             Collider.size = new Vector3(5, 1, 1);
             Collider.center = new Vector3(0.25f, -4.18f, -0.5f);
+            felt = true;
         }
     }
 
