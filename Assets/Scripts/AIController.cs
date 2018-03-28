@@ -39,7 +39,7 @@ public class AIController : MonoBehaviour
 		brain.Update();
 
 
-        if (Vector3.Distance(transform.position, Player.transform.position) < 7)
+        if (Vector3.Distance(transform.position, Player.transform.position) < 6)
         {
             playerIsNear = true;
         }
