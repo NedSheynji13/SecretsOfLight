@@ -65,7 +65,7 @@ public class AIController : MonoBehaviour
     private void Patrol()
 	{
         
-		moveDirX = transform.position.x +Random.Range(-0.1f,0.1f) ;
+		moveDirX = transform.position.x + Random.Range(-0.1f,0.1f) ;
         moveDirY = transform.position.y + Random.Range(-0.1f, 0.1f);
 		karate = new Vector3(moveDirX, moveDirY, transform.position.z);
         transform.position = Vector3.Slerp(transform.position, karate, 0.05f);
@@ -87,19 +87,19 @@ public class AIController : MonoBehaviour
 		{
             brain = new FSM(Patrol);
 		}
-		if (reachedPlayer)
-		{
+		//if (reachedPlayer)
+		//{
 
-			Debug.Log("karate");
-            brain = new FSM(Patrol);
-        }
+		//	Debug.Log("karate");
+  //          brain = new FSM(Patrol);
+  //      }
         //throw new System.NotImplementedException();
     }
 
-	private void Fight()
-	{
-		throw new System.NotImplementedException();
-	}
+	//private void Fight()
+	//{
+	//	throw new System.NotImplementedException();
+	//}
 
 
 }

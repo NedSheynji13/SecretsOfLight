@@ -27,8 +27,8 @@ public class ObjectiveScript : MonoBehaviour ,IInteractable{
 
             Wusli.SetFloat("Distancce", Vector3.Distance(transform.position, other.transform.position));
         }
-        }
-        
     }
+        
+}
 
 
