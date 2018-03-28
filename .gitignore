@@ -31,6 +31,5 @@ ExportedObj/
 *.user
 *.unityproj
 *.booproj
-*.meta
 /Assets/Scenes/etc.meta
 /Assets/Scenes/etc
