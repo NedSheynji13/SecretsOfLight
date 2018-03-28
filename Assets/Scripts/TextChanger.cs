@@ -10,9 +10,9 @@ public class TextChanger : MonoBehaviour
     public TMP_ColorGradient Default, hovered;
     #endregion
 
-    void Start()
+    private void Start()
     {
-        Text = gameObject.GetComponent<TextMeshProUGUI>();
+        Text = GetComponent<TextMeshProUGUI>();
     }
 
     public void Hovered()
